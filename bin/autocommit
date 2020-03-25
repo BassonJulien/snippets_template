@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SCRIPT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd );
+ROOT_DIR="$SCRIPT_DIR/.."
+
+cd "${ROOT_DIR}"
+make html
+git add -A
+git commit -m "Update snippets"
+git push origin master

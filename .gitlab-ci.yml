@@ -1,0 +1,13 @@
+image: dockerrepository/zappa:3.6
+
+stages:
+  - web_publish
+
+variables:
+  AWS_DEFAULT_REGION: "eu-west-1"
+
+web_publish:
+  stage: web_publish
+  script:
+    - apt-get install -y rsync
+    - ./bin/web_publish.py
