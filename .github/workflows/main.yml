@@ -24,9 +24,8 @@ jobs:
 
     - name: Web Publish
       run: |
-        sudo apt-get update
-        sudo apt-get upgrade
         sudo apt-get install -y rsync
+        pip3 install setuptools
         pip3 install .
         make html
         aws s3 sync build/html/ s3://<MY_BUCKET_NAME>
