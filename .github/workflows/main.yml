@@ -25,4 +25,6 @@ jobs:
     - name: Web Publish
       run: |
         sudo apt-get install -y rsync
-        ./bin/web_publish.py
+        pip3 install .
+        make html
+        aws s3 sync build/html/ s3://<MY_BUCKET_NAME>
