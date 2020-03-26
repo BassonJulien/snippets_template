@@ -24,7 +24,8 @@ jobs:
 
     - name: Web Publish
       run: |
-        sudo apt-get install -y rsync
+        sudo apt update
+        sudo apt-get install -y rsync python3-pip
         python3 setup.py install
         pip3 install .
         make html
